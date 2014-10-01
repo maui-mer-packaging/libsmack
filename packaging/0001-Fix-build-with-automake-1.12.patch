@@ -1,0 +1,28 @@
+From: Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+Date: Wed, 1 Oct 2014 21:47:33 +0200
+Subject: Fix build with automake 1.12
+
+Treating warnings as errors break the build like this:
+
+[   27s] automake: warnings are treated as errors
+[   27s] /usr/share/automake-1.12/am/ltlibrary.am: warning: 'libsmack.la': linking libtool libraries using a non-POSIX
+[   27s] /usr/share/automake-1.12/am/ltlibrary.am: archiver requires 'AM_PROG_AR' in 'configure.ac'
+[   27s] src/Makefile.am:2:   while processing Libtool library 'libsmack.la'
+[   27s] src/Makefile.am: installing './depcomp'
+[   27s] autoreconf: automake failed with exit status: 1
+---
+ configure.ac | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/configure.ac b/configure.ac
+index 871511d..72444ab 100644
+--- a/configure.ac
++++ b/configure.ac
+@@ -1,6 +1,6 @@
+ AC_PREREQ(2.59)
+ AC_INIT([libsmack],[1.0])
+-AM_INIT_AUTOMAKE(-Wall -Werror)
++AM_INIT_AUTOMAKE(-Wall)
+ 
+ AC_CONFIG_MACRO_DIR([m4])
+ 

@@ -1,12 +1,14 @@
 Name: libsmack
 Summary: SMACK Libraries
 Version: 2.0.0
-Release: 1
+Release: 2
 Group: System/Base
 License: LGPLv2
 URL: http://meego.gitorious.org/meego-platform-security
 Sources:
     - "%{name}-%{version}.tar.bz2"
+Patches:
+    - 0001-Fix-build-with-automake-1.12.patch
 Description: |
     These are the userland libraries and tools for SMACK.
 PkgConfigBR:
