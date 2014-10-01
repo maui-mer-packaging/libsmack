@@ -47,7 +47,7 @@ Documentation for SMACK userland tools.
 
 
 %prep
-%setup -q -n %{name}-%{version}/%{name}
+%setup -q -n %{name}-%{version}
 
 # 0001-Fix-build-with-automake-1.12.patch
 %patch0 -p1

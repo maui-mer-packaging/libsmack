@@ -17,7 +17,7 @@ PkgBR:
     - libattr-devel
     - uthash-devel
     - doxygen
-SetupOptions: -q -n %{name}-%{version}/%{name}
+SetupOptions: -q -n %{name}-%{version}
 Configure: reconfigure
 SubPackages:
     - Name: devel
